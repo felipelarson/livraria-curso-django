@@ -12,6 +12,7 @@ from rest_framework.generics import (
     RetrieveUpdateDestroyAPIView,
 )
 from rest_framework.serializers import ModelSerializer
+from rest_framework.viewsets import ModelViewSet
 
 from core.models import Categoria
 
@@ -118,5 +119,10 @@ class CategoriaListGeneric(ListCreateAPIView):
 
 class CategoriaDetailGeneric(RetrieveUpdateDestroyAPIView):
     lookup_field = "id"
+    queryset = Categoria.objects.all()
+    serializer_class = CategoriaSerializer
+
+
+class CategoriaViewSet(ModelViewSet):
     queryset = Categoria.objects.all()
     serializer_class = CategoriaSerializer

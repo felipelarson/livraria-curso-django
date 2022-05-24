@@ -42,3 +42,15 @@ toml @ file:///home/felipe/.cache/pypoetry/artifacts/51/ac/24/674da558495229c57c
 tomli @ file:///home/felipe/.cache/pypoetry/artifacts/62/12/b6/6db9ebb9c8e1a6c5aa8a92ae73098d8119816b5e8507490916621bc305/tomli-2.0.1-py3-none-any.whl
 virtualenv @ file:///home/felipe/.cache/pypoetry/artifacts/3f/58/e0/9b3dd7536acdbfaa9970eba1de68906a2c2338fbe9b051567b9505fe39/virtualenv-20.14.1-py2.py3-none-any.whl
 whitenoise @ file:///home/felipe/.cache/pypoetry/artifacts/9c/30/89/76fbee8b0326260cb169c67765c5aa394343d907066272e881f429eb11/whitenoise-6.1.0-py3-none-any.whl
+asgiref==3.5.1
+black==22.3.0
+Django==4.0.4
+flake8==4.0.1
+mccabe==0.6.1
+mypy-extensions==0.4.3
+pathspec==0.9.0
+platformdirs==2.5.2
+pycodestyle==2.8.0
+pyflakes==2.4.0
+sqlparse==0.4.2
+tomli==2.0.1
