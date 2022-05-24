@@ -5,13 +5,15 @@ from django.urls import path, include
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-router.register(r"categorias-viewset", views.CategoriaViewSet)
+router.register(r"autores", views.AutorViewSet)
+router.register(r"categorias", views.CategoriaViewSet)
+router.register(r"editoras", views.EditoraViewSet)
 
 urlpatterns = [
-    # path("admin/", admin.site.urls),
+    path("admin/", admin.site.urls),
     # path("teste/", views.teste),
-    # path("categorias/", views.CategoriaView.as_view()),
-    # path("categorias/<int:id>/", views.CategoriaView.as_view()),
+    # path("categorias-class/", views.CategoriaView.as_view()),
+    # path("categorias-class/<int:id>/", views.CategoriaView.as_view()),
     # path("categorias-apiview/", views.CategoriaView.as_view()),
     # path("categorias-apiview/<int:id>/", views.CategoriaDetail.as_view()),
     # path("categorias-generic/", views.CategoriaListGeneric.as_view()),
