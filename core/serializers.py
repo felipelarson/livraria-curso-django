@@ -81,7 +81,44 @@ class CompraSerializer(ModelSerializer):
 
     class Meta:
         model = Compra
-        fields = "__all__"
+        fields = (
+            "id",
+            "status",
+            "usuario",
+            "itens",
+            "total",
+        )
 
     def get_status(self, instance):
         return instance.get_status_display()
+
+
+class CriarEditarItensCompraSerializer(ModelSerializer):
+    class Meta:
+        model = ItensCompra
+        fields = ("id", "livro", "quantidade")
+
+
+class CriarEditarCompraSerializer(ModelSerializer):
+    itens = CriarEditarItensCompraSerializer(many=True)
+
+    class Meta:
+        model = Compra
+        fields = ("usuario", "itens")
+
+    def create(self, validated_data):
+        itens = validated_data.pop("itens")
+        compra = Compra.objects.create(**validated_data)
+        for item in itens:
+            ItensCompra.objects.create(compra=compra, **item)
+        compra.save()
+        return compra
+
+    def update(self, instance, validated_data):
+        itens = validated_data.pop("itens")
+        if itens:
+            instance.itens.all().delete()
+            for item in itens:
+                ItensCompra.objects.create(compra=instance, **item)
+            instance.save()
+        return instance
