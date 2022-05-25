@@ -1,7 +1,10 @@
 from core import views
 from django.contrib import admin
 from django.urls import path, include
-
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
 from rest_framework import routers
 
 router = routers.DefaultRouter()
@@ -13,6 +16,8 @@ router.register(r"livros", views.LivroViewSet)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
+    path("token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
     # path("teste/", views.teste),
     # path("categorias-class/", views.CategoriaView.as_view()),
     # path("categorias-class/<int:id>/", views.CategoriaView.as_view()),
