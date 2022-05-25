@@ -3,6 +3,7 @@ from rest_framework.serializers import (
     CharField,
     SerializerMethodField,
 )
+from rest_framework import serializers
 
 from core.models import Autor, Compra, Categoria, Editora, ItensCompra, Livro
 
@@ -101,6 +102,7 @@ class CriarEditarItensCompraSerializer(ModelSerializer):
 
 class CriarEditarCompraSerializer(ModelSerializer):
     itens = CriarEditarItensCompraSerializer(many=True)
+    usuario = serializers.HiddenField(default=serializers.CurrentUserDefault())
 
     class Meta:
         model = Compra
