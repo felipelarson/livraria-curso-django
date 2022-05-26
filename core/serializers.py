@@ -4,6 +4,7 @@ from rest_framework.serializers import (
     SerializerMethodField,
 )
 from rest_framework import serializers
+from Editora.serializers import EditoraNestedSerializer
 
 from core.models import Autor, Compra, Categoria, Editora, ItensCompra, Livro
 
@@ -12,21 +13,6 @@ class CategoriaSerializer(ModelSerializer):
     class Meta:
         model = Categoria
         fields = "__all__"
-
-
-class EditoraSerializer(ModelSerializer):
-    class Meta:
-        model = Editora
-        fields = "__all__"
-
-
-class EditoraNestedSerializer(ModelSerializer):
-    class Meta:
-        model = Editora
-        fields = (
-            "nome",
-            "site",
-        )
 
 
 class AutorSerializer(ModelSerializer):
