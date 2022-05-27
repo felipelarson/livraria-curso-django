@@ -1,7 +1,7 @@
 from rest_framework.viewsets import ModelViewSet
+from Editora.models import Editora
 
-from core.models import Editora
-from core.serializers import EditoraSerializer
+from Editora.serializers import EditoraSerializer
 
 
 class EditoraViewSet(ModelViewSet):

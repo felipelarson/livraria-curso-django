@@ -6,4 +6,3 @@ from .categoriaGeneric import CategoriaListGeneric, CategoriaDetailGeneric
 from .autor import AutorViewSet
 from .categoria import CategoriaViewSet
 from .compra import CompraViewSet
-from .livro import LivroViewSet

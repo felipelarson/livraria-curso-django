@@ -4,9 +4,8 @@ from rest_framework.serializers import (
     SerializerMethodField,
 )
 from rest_framework import serializers
-from Editora.serializers import EditoraNestedSerializer, EditoraSerializer
 
-from core.models import Autor, Compra, Categoria, ItensCompra, Livro
+from core.models import Autor, Compra, Categoria, ItensCompra
 
 
 class CategoriaSerializer(ModelSerializer):
@@ -19,24 +18,6 @@ class AutorSerializer(ModelSerializer):
     class Meta:
         model = Autor
         fields = "__all__"
-
-
-class LivroDetailSerializer(ModelSerializer):
-    categoria = CharField(source="categoria.descricao")
-    editora = EditoraNestedSerializer()
-    autores = SerializerMethodField()
-
-    class Meta:
-        model = Livro
-        fields = "__all__"
-        depth = 1
-
-    def get_autores(self, instance):
-        nomes_autores = []
-        autores = instance.autores.get_queryset()
-        for autor in autores:
-            nomes_autores.append(autor.nome)
-        return nomes_autores
 
 
 class ItensCompraSerializer(ModelSerializer):
