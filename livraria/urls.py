@@ -1,3 +1,4 @@
+from Editora.views import EditoraViewSet
 from core import views
 from django.contrib import admin
 from django.urls import path, include
@@ -16,7 +17,7 @@ router = routers.DefaultRouter()
 router.register(r"autores", views.AutorViewSet)
 router.register(r"categorias", views.CategoriaViewSet)
 router.register(r"compras", views.CompraViewSet)
-router.register(r"editoras", views.EditoraViewSet)
+router.register(r"editoras", EditoraViewSet)
 router.register(r"livros", views.LivroViewSet)
 
 

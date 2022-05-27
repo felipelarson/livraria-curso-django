@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     "drf_spectacular",
     "corsheaders",
     "core",
+    "Editora",
 ]
 
 MIDDLEWARE = [

@@ -4,9 +4,9 @@ from rest_framework.serializers import (
     SerializerMethodField,
 )
 from rest_framework import serializers
-from Editora.serializers import EditoraNestedSerializer
+from Editora.serializers import EditoraNestedSerializer, EditoraSerializer
 
-from core.models import Autor, Compra, Categoria, Editora, ItensCompra, Livro
+from core.models import Autor, Compra, Categoria, ItensCompra, Livro
 
 
 class CategoriaSerializer(ModelSerializer):
