@@ -1,7 +1,8 @@
 from Autor.views import AutorViewSet
+from Categoria.views import CategoriaViewSet
+from Compra.views import CompraViewSet
 from Editora.views import EditoraViewSet
 from Livro.views import LivroViewSet
-from core import views
 from django.contrib import admin
 from django.urls import path, include
 from drf_spectacular.views import (
@@ -18,8 +19,8 @@ from rest_framework import routers
 
 router = routers.DefaultRouter()
 router.register(r"autores", AutorViewSet)
-router.register(r"categorias", views.CategoriaViewSet)
-router.register(r"compras", views.CompraViewSet)
+router.register(r"categorias", CategoriaViewSet)
+router.register(r"compras", CompraViewSet)
 router.register(r"editoras", EditoraViewSet)
 router.register(r"livros", LivroViewSet)
 

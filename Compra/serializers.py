@@ -5,13 +5,7 @@ from rest_framework.serializers import (
 )
 from rest_framework import serializers
 
-from core.models import Compra, Categoria, ItensCompra
-
-
-class CategoriaSerializer(ModelSerializer):
-    class Meta:
-        model = Categoria
-        fields = "__all__"
+from Compra.models import Compra, ItensCompra
 
 
 class ItensCompraSerializer(ModelSerializer):

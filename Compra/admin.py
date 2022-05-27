@@ -1,9 +1,6 @@
 from django.contrib import admin
 
-from core.models import Categoria, Compra, ItensCompra
-
-
-admin.site.register(Categoria)
+from Compra.models import Compra, ItensCompra
 
 
 class ItensInline(admin.TabularInline):

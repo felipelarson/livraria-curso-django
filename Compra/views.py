@@ -1,6 +1,6 @@
 from rest_framework.viewsets import ModelViewSet
-from core.models import Compra
-from core.serializers import CompraSerializer, CriarEditarCompraSerializer
+from Compra.models import Compra
+from Compra.serializers import CompraSerializer, CriarEditarCompraSerializer
 
 
 class CompraViewSet(ModelViewSet):

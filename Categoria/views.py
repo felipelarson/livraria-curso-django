@@ -1,7 +1,7 @@
 from rest_framework.viewsets import ModelViewSet
 
-from core.models import Categoria
-from core.serializers import CategoriaSerializer
+from Categoria.models import Categoria
+from Categoria.serializers import CategoriaSerializer
 
 
 class CategoriaViewSet(ModelViewSet):

@@ -5,13 +5,6 @@ from django.contrib.auth.models import User
 from Livro.models import Livro
 
 
-class Categoria(models.Model):
-    descricao = models.CharField(max_length=255)
-
-    def __str__(self):
-        return self.descricao
-
-
 class Compra(models.Model):
     class StatusCompra(models.IntegerChoices):
         CARRINHO = 1, "Carrinho"

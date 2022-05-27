@@ -33,8 +33,9 @@ INSTALLED_APPS = [
     "rest_framework_simplejwt",
     "drf_spectacular",
     "corsheaders",
-    "core",
     "Autor",
+    "Categoria",
+    "Compra",
     "Editora",
     "Livro",
 ]
