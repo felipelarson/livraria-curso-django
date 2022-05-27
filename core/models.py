@@ -12,16 +12,6 @@ class Categoria(models.Model):
         return self.descricao
 
 
-class Autor(models.Model):
-    class Meta:
-        verbose_name_plural = "autores"
-
-    nome = models.CharField(max_length=255)
-
-    def __str__(self):
-        return self.nome
-
-
 class Compra(models.Model):
     class StatusCompra(models.IntegerChoices):
         CARRINHO = 1, "Carrinho"

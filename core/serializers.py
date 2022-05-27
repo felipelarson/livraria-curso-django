@@ -5,18 +5,12 @@ from rest_framework.serializers import (
 )
 from rest_framework import serializers
 
-from core.models import Autor, Compra, Categoria, ItensCompra
+from core.models import Compra, Categoria, ItensCompra
 
 
 class CategoriaSerializer(ModelSerializer):
     class Meta:
         model = Categoria
-        fields = "__all__"
-
-
-class AutorSerializer(ModelSerializer):
-    class Meta:
-        model = Autor
         fields = "__all__"
 
 

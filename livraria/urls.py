@@ -1,3 +1,4 @@
+from Autor.views import AutorViewSet
 from Editora.views import EditoraViewSet
 from Livro.views import LivroViewSet
 from core import views
@@ -14,8 +15,9 @@ from rest_framework_simplejwt.views import (
 )
 from rest_framework import routers
 
+
 router = routers.DefaultRouter()
-router.register(r"autores", views.AutorViewSet)
+router.register(r"autores", AutorViewSet)
 router.register(r"categorias", views.CategoriaViewSet)
 router.register(r"compras", views.CompraViewSet)
 router.register(r"editoras", EditoraViewSet)
