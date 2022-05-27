@@ -1,4 +1,5 @@
 from Editora.views import EditoraViewSet
+from Livro.views import LivroViewSet
 from core import views
 from django.contrib import admin
 from django.urls import path, include
@@ -18,7 +19,7 @@ router.register(r"autores", views.AutorViewSet)
 router.register(r"categorias", views.CategoriaViewSet)
 router.register(r"compras", views.CompraViewSet)
 router.register(r"editoras", EditoraViewSet)
-router.register(r"livros", views.LivroViewSet)
+router.register(r"livros", LivroViewSet)
 
 
 urlpatterns = [
